@@ -16,17 +16,22 @@ XSecurity enables these features on the **stock** apps with LSPosed hooks. No sy
 - 🌐 **Network:** keep mobile data on past the quota, keep the hotspot on, data usage in Control Center.
 - 📱 **App info:** extra rows (version code, UID, data, APK path, target SDK) with tap to copy, plus Open in Play Store. The header has Open, Path and a chain-icon Open by default action; the duplicate lower action is removed.
 - ⚙️ **System:** full global Toolbox, 50 apps in the sidebar, no permission countdown, video & call toolbox, second space, car accident / car sickness features, storage defragmentation (FBO).
-- 🌙 **Dark mode:** list every installed app under "Individual apps" instead of just a few.
+- 🌙 **Dark mode:** list eligible installed apps under "Individual apps", with search by app name or package name. Requires Settings scope.
 - 🏪 **App store:** show a chooser for `market://` links instead of forcing GetApps, and open GetApps detail pages in a floating window.
-- 🔧 **Signature verification bypass:** 11 individual installation options, including signature compatibility, downgrades and persistent system app updates. These options do not migrate packages to a different shared UID.
+- 🔧 **Signature verification bypass:** 12 individual installation options, including signature compatibility, downgrades, persistent system app updates and optional SystemUI UID preservation. UID preservation is experimental, retains the installed identity and requires the module to remain enabled with differently-declared updates. It does not fix Android/API or ROM incompatibility.
 - 📸 **Screenshot and screen recording:** optional removal of supported `FLAG_SECURE` and HyperOS capture restrictions.
 - 📋 **Clipboard:** choose which apps may read the clipboard in the background.
 - 🛡️ **Privacy:** optional prevention of app-list uploads by Xiaomi Guard Provider.
-- 🎭 **Themes:** optional prevention of applied themes reverting to default.
+- 🎭 **Themes:** optional prevention of periodic theme resets, without changing theme-directory permissions.
+- 🔢 **Phone lock screen:** optional shuffled PIN keypad, separate from App lock; requires System UI scope and a reboot.
+- 🧰 **Compatibility fixes:** cached Toolbox card completion and newer Security motion-sickness support, when implemented by the ROM.
 - 📦 **System updater:** skip the "auto update" dialog and the OTA validation prompt (optional, off by default).
 - 🎨 **App:** HyperOS (Miuix) or Material You look, light / dark / system theme, 5 languages, hide the home screen icon.
 
 Most switches that change how the phone behaves are off by default; turn on what you want. Framework features need the **System Framework** scope and a reboot. Gallery integration has been removed in 1.5. Open XSecurity once after updating to clean up its retired preference and scope.
+
+
+> **Advanced users only:** persistent system-app updates and SystemUI UID preservation may cause SystemUI crashes or prevent booting with an incompatible APK. Enable only if you know how to recover your device. Keep XSecurity and UID preservation enabled while a differently-declared SystemUI update is installed. A tester reported a successful update; this is not a guarantee for other ROMs or subsequent reboots.
 
 ## Requirements
 - A Xiaomi phone on the HyperOS 4 China ROM
@@ -34,7 +39,7 @@ Most switches that change how the phone behaves are off by default; turn on what
 
 ## Install
 1. Install XSecurity.
-2. Enable it in LSPosed and review the recommended scope: System Framework (`system`), Security (`com.miui.securitycenter`), Battery and performance (`com.miui.powerkeeper`), Updater (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Themes (`com.android.thememanager`) and Guard Provider (`com.miui.guardprovider`).
+2. Enable it in LSPosed and review the recommended scope: System Framework (`system`), Security (`com.miui.securitycenter`), Battery and performance (`com.miui.powerkeeper`), Updater (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Themes (`com.android.thememanager`), Guard Provider (`com.miui.guardprovider`), Settings (`com.android.settings`) and System UI (`com.android.systemui`).
 3. Grant XSecurity its LSPosed permission, otherwise the app shows "Not active".
 4. Reboot for the framework features.
 
@@ -61,17 +66,22 @@ XSecurity bu özellikleri LSPosed hook'larıyla **orijinal** uygulamalarda açar
 - 🌐 **Ağ:** kota bitince mobil veri açık kalsın, hotspot açık kalsın, kontrol merkezinde veri kullanımı.
 - 📱 **Uygulama bilgisi:** ek satırlar (sürüm kodu, UID, veri, APK yolu, hedef SDK), dokununca kopyala ve Play Store'da aç. Üstte Aç, Yol ve zincir simgeli Varsayılan aç bulunur; alttaki tekrar kaldırılmıştır.
 - ⚙️ **Sistem:** global tam Araç kutusu, yan çubukta 50 uygulama, izin geri sayımı yok, video & arama araç kutusu, ikinci alan, kaza/araç tutması özellikleri, depolama birleştirme (FBO).
-- 🌙 **Karanlık mod:** "Tek tek uygulamalar" altında birkaç uygulama yerine yüklü tüm uygulamalar.
+- 🌙 **Karanlık mod:** "Tek tek uygulamalar" altında uygun yüklü uygulamalar ve ad/paket adına göre arama. Ayarlar kapsamı gerekir.
 - 🏪 **Uygulama mağazası:** `market://` bağlantılarında GetApps'e zorlamak yerine seçici göster, GetApps detaylarını kayan pencerede aç.
-- 🔧 **İmza doğrulamasını atlama:** imza uyumluluğu, sürüm düşürme ve kalıcı sistem uygulamalarını güncelleme dahil 11 ayrı kurulum seçeneği. Bu seçenekler paketleri farklı bir ortak UID'ye taşımaz.
+- 🔧 **İmza doğrulamasını atlama:** imza uyumluluğu, sürüm düşürme, kalıcı sistem uygulamalarını güncelleme ve isteğe bağlı SystemUI UID koruması dahil 12 ayrı kurulum seçeneği. UID koruması deneyseldir, yüklü kimliği korur ve farklı kimlik bildiren güncellemeler kullanılırken modül etkin kalmalıdır. Android/API veya ROM uyumsuzluğunu gidermez.
 - 📸 **Ekran görüntüsü ve ekran kaydı:** desteklenen `FLAG_SECURE` ve HyperOS yakalama kısıtlamalarını kaldırma seçeneği.
 - 📋 **Pano:** arka planda panoyu okuyabilecek uygulamaları seçme.
 - 🛡️ **Gizlilik:** Xiaomi Guard Provider'ın uygulama listesi yüklemesini engelleme seçeneği.
-- 🎭 **Temalar:** uygulanan temanın varsayılana dönmesini önleme seçeneği.
+- 🎭 **Temalar:** tema klasörü izinlerini değiştirmeden periyodik tema sıfırlanmasını önleme seçeneği.
+- 🔢 **Telefon kilit ekranı:** Uygulama kilidinden ayrı karışık PIN seçeneği; Sistem Arayüzü kapsamı ve yeniden başlatma gerekir.
+- 🧰 **Uyumluluk düzeltmeleri:** önbellekteki Araç kutusu kartlarının tamamlanması ve ROM uygulaması varsa yeni Güvenlik sürümlerinde araç tutması desteği.
 - 📦 **Sistem güncelleyici:** "otomatik güncelleme" diyaloğunu ve OTA doğrulama uyarısını atla (isteğe bağlı, varsayılan kapalı).
 - 🎨 **Uygulama:** HyperOS (Miuix) veya Material You görünümü, açık / koyu / sistem teması, 5 dil, ana ekran simgesini gizle.
 
 Telefonun davranışını değiştiren çoğu anahtar varsayılan kapalıdır; istediğini aç. Framework özellikleri için **System Framework** kapsamı ve yeniden başlatma gerekir. Galeri entegrasyonu 1.5 sürümünde kaldırıldı. Eski tercih ve kapsamı temizlemek için güncellemeden sonra XSecurity'yi bir kez açın.
+
+
+> **Yalnızca ileri düzey kullanıcılar:** kalıcı sistem uygulaması güncellemeleri ve SystemUI UID koruması, uyumsuz APK ile SystemUI çökmesine veya telefonun açılmamasına yol açabilir. Yalnızca cihazınızı kurtarmayı biliyorsanız etkinleştirin. Farklı kimlik bildiren SystemUI güncellemesi yüklüyken XSecurity ve UID koruması etkin kalmalıdır. Bir test kullanıcısı başarılı güncelleme bildirdi; diğer ROM’lar veya sonraki yeniden başlatmalar için garanti değildir.
 
 ### Gereksinimler
 - HyperOS 4 Çin ROM'lu bir Xiaomi telefon
@@ -79,7 +89,7 @@ Telefonun davranışını değiştiren çoğu anahtar varsayılan kapalıdır; i
 
 ### Kurulum
 1. XSecurity'yi kurun.
-2. LSPosed'da etkinleştirin ve önerilen kapsamı kontrol edin: Sistem Çerçevesi (`system`), Güvenlik (`com.miui.securitycenter`), Pil ve performans (`com.miui.powerkeeper`), Güncelleyici (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Temalar (`com.android.thememanager`) ve Guard Provider (`com.miui.guardprovider`).
+2. LSPosed'da etkinleştirin ve önerilen kapsamı kontrol edin: Sistem Çerçevesi (`system`), Güvenlik (`com.miui.securitycenter`), Pil ve performans (`com.miui.powerkeeper`), Güncelleyici (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Temalar (`com.android.thememanager`), Guard Provider (`com.miui.guardprovider`), Ayarlar (`com.android.settings`) ve Sistem Arayüzü (`com.android.systemui`).
 3. Modülün LSPosed iznini verin, yoksa uygulama "Etkin değil" gösterir.
 4. Framework özellikleri için yeniden başlatın.
 
