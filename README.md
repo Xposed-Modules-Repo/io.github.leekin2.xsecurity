@@ -14,6 +14,7 @@ XSecurity enables these features on the **stock** apps with LSPosed hooks. No sy
 - 🎮 **Games:** remove the 60 FPS cap, Game Turbo tools (HDR, super resolution, frame interpolation, touch, extras), Wild Boost and performance modes.
 - 🔋 **Battery & charging:** app battery ranking and screen-on time, battery health (capacity, cycles, temperature), charge-protection and smart-charging options, low-temperature endurance.
 - 🌐 **Network:** keep mobile data on past the quota, keep the hotspot on, data usage in Control Center.
+- 📶 **VoLTE / VoNR / VoWiFi:** the Global ROM's original Vo LTE / Vo NR / Vo WiFi status bar icons on the China ROM, shown only while IMS is registered (System UI scope); Xiaomi's own **Use VoLTE** switch and Wi-Fi calling **Network preferences** on the SIM settings page, kept after reboot (Phone scope).
 - 📱 **App info:** extra rows (version code, UID, data, APK path, target SDK) with tap to copy, plus Open in Play Store. The header has Open, Path and a chain-icon Open by default action; the duplicate lower action is removed.
 - ⚙️ **System:** full global Toolbox, 50 apps in the sidebar, no permission countdown, video & call toolbox, second space, car accident / car sickness features, storage defragmentation (FBO).
 - 🌙 **Dark mode:** list eligible installed apps under "Individual apps", with search by app name or package name. Requires Settings scope.
@@ -39,7 +40,7 @@ Most switches that change how the phone behaves are off by default; turn on what
 
 ## Install
 1. Install XSecurity.
-2. Enable it in LSPosed and review the recommended scope: System Framework (`system`), Security (`com.miui.securitycenter`), Battery and performance (`com.miui.powerkeeper`), Updater (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Themes (`com.android.thememanager`), Guard Provider (`com.miui.guardprovider`), Settings (`com.android.settings`) and System UI (`com.android.systemui`).
+2. Enable it in LSPosed and review the recommended scope: System Framework (`system`), Security (`com.miui.securitycenter`), Battery and performance (`com.miui.powerkeeper`), Updater (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Themes (`com.android.thememanager`), Guard Provider (`com.miui.guardprovider`), Settings (`com.android.settings`), System UI (`com.android.systemui`) and Phone (`com.android.phone`).
 3. Grant XSecurity its LSPosed permission, otherwise the app shows "Not active".
 4. Reboot for the framework features.
 
@@ -64,6 +65,7 @@ XSecurity bu özellikleri LSPosed hook'larıyla **orijinal** uygulamalarda açar
 - 🎮 **Oyunlar:** 60 FPS sınırını kaldır, Game Turbo araçları (HDR, süper çözünürlük, kare ekleme, dokunma, ekstralar), Wild Boost ve performans modları.
 - 🔋 **Pil ve şarj:** uygulama pil sıralaması ve ekran süresi, pil sağlığı (kapasite, döngü, sıcaklık), şarj koruması ve akıllı şarj seçenekleri, düşük sıcaklık dayanıklılığı.
 - 🌐 **Ağ:** kota bitince mobil veri açık kalsın, hotspot açık kalsın, kontrol merkezinde veri kullanımı.
+- 📶 **VoLTE / VoNR / VoWiFi:** Çin ROM'da global ROM'un orijinal Vo LTE / Vo NR / Vo WiFi durum çubuğu simgeleri, yalnızca IMS kayıtlıyken (Sistem Arayüzü kapsamı); SIM ayarlarında Xiaomi'nin kendi **VoLTE kullan** anahtarı ve Wi-Fi araması **Ağ tercihleri**, yeniden başlatınca kaybolmaz (Telefon kapsamı).
 - 📱 **Uygulama bilgisi:** ek satırlar (sürüm kodu, UID, veri, APK yolu, hedef SDK), dokununca kopyala ve Play Store'da aç. Üstte Aç, Yol ve zincir simgeli Varsayılan aç bulunur; alttaki tekrar kaldırılmıştır.
 - ⚙️ **Sistem:** global tam Araç kutusu, yan çubukta 50 uygulama, izin geri sayımı yok, video & arama araç kutusu, ikinci alan, kaza/araç tutması özellikleri, depolama birleştirme (FBO).
 - 🌙 **Karanlık mod:** "Tek tek uygulamalar" altında uygun yüklü uygulamalar ve ad/paket adına göre arama. Ayarlar kapsamı gerekir.
@@ -89,7 +91,7 @@ Telefonun davranışını değiştiren çoğu anahtar varsayılan kapalıdır; i
 
 ### Kurulum
 1. XSecurity'yi kurun.
-2. LSPosed'da etkinleştirin ve önerilen kapsamı kontrol edin: Sistem Çerçevesi (`system`), Güvenlik (`com.miui.securitycenter`), Pil ve performans (`com.miui.powerkeeper`), Güncelleyici (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Temalar (`com.android.thememanager`), Guard Provider (`com.miui.guardprovider`), Ayarlar (`com.android.settings`) ve Sistem Arayüzü (`com.android.systemui`).
+2. LSPosed'da etkinleştirin ve önerilen kapsamı kontrol edin: Sistem Çerçevesi (`system`), Güvenlik (`com.miui.securitycenter`), Pil ve performans (`com.miui.powerkeeper`), Güncelleyici (`com.android.updater`), Joyose (`com.xiaomi.joyose`), Temalar (`com.android.thememanager`), Guard Provider (`com.miui.guardprovider`), Ayarlar (`com.android.settings`), Sistem Arayüzü (`com.android.systemui`) ve Telefon (`com.android.phone`).
 3. Modülün LSPosed iznini verin, yoksa uygulama "Etkin değil" gösterir.
 4. Framework özellikleri için yeniden başlatın.
 
