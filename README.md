@@ -3,6 +3,11 @@
 **Unlocks for the HyperOS Security app, Battery and performance, Game Turbo and the system updater.**
 An LSPosed module for the HyperOS 4 China ROM.
 
+> **XSecurity has moved to [XApps](https://github.com/Leekin2/XApps)** (io.github.leekin2.xapps): XGoogle, XSecurity and XNotify in one module. XSecurity gets no more updates.
+> Flash the **XApps zip** from the [latest release](https://github.com/Leekin2/XApps/releases/latest) in KernelSU / Magisk and restart fully: it installs XApps, sets up LSPosed, moves your XSecurity settings and removes XSecurity by itself. Do not install the XApps APK next to XSecurity.
+>
+> **XSecurity artık [XApps](https://github.com/Leekin2/XApps) içinde** ve güncellenmeyecek. XApps zip'ini root yöneticisinde kurup telefonu tamamen yeniden başlatın: ayarlarınızı taşır ve XSecurity'i kendisi kaldırır.
+
 [Türkçe açıklama aşağıda](#türkçe)
 
 ## Why
